@@ -5,6 +5,16 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.Data", "MillionAndUp.Data.csproj", "{60FA4EB3-4814-433D-A0EA-5A9AFAE0C9CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.Domain", "..\MillionAndUp.Domain\MillionAndUp.Domain.csproj", "{460AD6F8-CDEA-4322-97DD-00E8139DAE01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.Helpers", "..\MillionAndUp.Helpers\MillionAndUp.Helpers.csproj", "{07B695FF-1458-4B47-89BA-4F69EE328E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.Models", "..\MillionAndUp.Models\MillionAndUp.Models.csproj", "{57C2C57D-3319-4BCF-A3B0-D7D14DBEFD72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.Initialization", "..\MillionAndUp.Initialization\MillionAndUp.Initialization.csproj", "{6B5C70C4-ACFF-4EBF-A793-44F5B1ED5E80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionAndUp.WebAPI", "..\MillionAndUp.WebAPI\MillionAndUp.WebAPI.csproj", "{572AD8BB-9FCC-49F6-BAE8-911990F085CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{60FA4EB3-4814-433D-A0EA-5A9AFAE0C9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FA4EB3-4814-433D-A0EA-5A9AFAE0C9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FA4EB3-4814-433D-A0EA-5A9AFAE0C9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460AD6F8-CDEA-4322-97DD-00E8139DAE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460AD6F8-CDEA-4322-97DD-00E8139DAE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460AD6F8-CDEA-4322-97DD-00E8139DAE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460AD6F8-CDEA-4322-97DD-00E8139DAE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B695FF-1458-4B47-89BA-4F69EE328E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B695FF-1458-4B47-89BA-4F69EE328E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B695FF-1458-4B47-89BA-4F69EE328E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B695FF-1458-4B47-89BA-4F69EE328E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C2C57D-3319-4BCF-A3B0-D7D14DBEFD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C2C57D-3319-4BCF-A3B0-D7D14DBEFD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C2C57D-3319-4BCF-A3B0-D7D14DBEFD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C2C57D-3319-4BCF-A3B0-D7D14DBEFD72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B5C70C4-ACFF-4EBF-A793-44F5B1ED5E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B5C70C4-ACFF-4EBF-A793-44F5B1ED5E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B5C70C4-ACFF-4EBF-A793-44F5B1ED5E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B5C70C4-ACFF-4EBF-A793-44F5B1ED5E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572AD8BB-9FCC-49F6-BAE8-911990F085CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572AD8BB-9FCC-49F6-BAE8-911990F085CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572AD8BB-9FCC-49F6-BAE8-911990F085CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572AD8BB-9FCC-49F6-BAE8-911990F085CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
