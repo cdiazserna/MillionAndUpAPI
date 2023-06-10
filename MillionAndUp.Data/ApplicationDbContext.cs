@@ -33,17 +33,22 @@ namespace MillionAndUp.Data
                 switch (entity.State)
                 {
                     case EntityState.Modified:
-                        entity.Entity.Updated = DateTime.UtcNow;
+                        entity.Entity.UpdatedDate = DateTime.UtcNow;
                         break;
                     case EntityState.Added:
-                        entity.Entity.Inserted = DateTime.UtcNow;
+                        entity.Entity.InsertedDate = DateTime.UtcNow;
 
                         break;
                 }
             }
         }
+
         public DbSet<Owner> Owners { get; set; }
+
         public DbSet<Property> Properties { get; set; }
 
+        public DbSet<PropertyImage> PropertyImages { get; set; }
+
+        public DbSet<PropertyTrace> PropertyTraces { get; set; }
     }
 }

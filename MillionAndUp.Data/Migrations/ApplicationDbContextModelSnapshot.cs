@@ -31,7 +31,7 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Inserted")
+                    b.Property<DateTime?>("InsertedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -40,7 +40,7 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Updated")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -60,7 +60,7 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<string>("CodeInternal")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Inserted")
+                    b.Property<DateTime?>("InsertedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -72,7 +72,7 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime?>("Updated")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("Year")
@@ -83,6 +83,68 @@ namespace MillionAndUp.Data.Migrations
                     b.HasIndex("OwnerId");
 
                     b.ToTable("Properties");
+                });
+
+            modelBuilder.Entity("MillionAndUp.Models.PropertyImage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("File")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("InsertedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("PropertyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("PropertyImages");
+                });
+
+            modelBuilder.Entity("MillionAndUp.Models.PropertyTrace", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DateSale")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("InsertedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("PropertyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("Tax")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Value")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("PropertyTraces");
                 });
 
             modelBuilder.Entity("MillionAndUp.Models.Property", b =>
@@ -96,9 +158,34 @@ namespace MillionAndUp.Data.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("MillionAndUp.Models.PropertyImage", b =>
+                {
+                    b.HasOne("MillionAndUp.Models.Property", "Property")
+                        .WithMany("PropertyImages")
+                        .HasForeignKey("PropertyId");
+
+                    b.Navigation("Property");
+                });
+
+            modelBuilder.Entity("MillionAndUp.Models.PropertyTrace", b =>
+                {
+                    b.HasOne("MillionAndUp.Models.Property", "Property")
+                        .WithMany("PropertyTraces")
+                        .HasForeignKey("PropertyId");
+
+                    b.Navigation("Property");
+                });
+
             modelBuilder.Entity("MillionAndUp.Models.Owner", b =>
                 {
                     b.Navigation("Properties");
+                });
+
+            modelBuilder.Entity("MillionAndUp.Models.Property", b =>
+                {
+                    b.Navigation("PropertyImages");
+
+                    b.Navigation("PropertyTraces");
                 });
 #pragma warning restore 612, 618
         }
