@@ -36,10 +36,12 @@ namespace MillionAndUp.Domain.UnitsOfWork
 
             var content = new System.IO.MemoryStream(file.Result.FileData);
             var directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "FileDownloaded");
+
             if (!Directory.Exists(directoryPath))
             {
                 Directory.CreateDirectory(directoryPath);
             }
+
             var path = Path.Combine(
                Directory.GetCurrentDirectory(), "FileDownloaded",
                file.Result.Name);

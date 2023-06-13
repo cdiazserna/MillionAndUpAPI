@@ -19,7 +19,7 @@ namespace MillionAndUp.Domain.UnitsOfWork
             parameters.Add(new ExecuteParameter() { Name = "MaxPrice", Value = payload.MaxPrice });
             parameters.Add(new ExecuteParameter() { Name = "CodeInternal", Value = payload.CodeInternal });
 
-            return await _repo.ExcecuteStoreProcedure<PropertyFiltersDTO>("getPropertiesByFilter", parameters);
+            return await _repo.ExecuteStoreProcedure<PropertyFiltersDTO>("getPropertiesByFilter", parameters);
         }
     }
 }

@@ -9,11 +9,9 @@ namespace MillionAndUp.Domain.Interfaces
         Task Add(T entity);
         Task Delete(Guid id);
         void Update(T entity);
-        Task<List<T>> ExcecuteStoreProcedure<T>(
+        Task<List<T>> ExecuteStoreProcedure<T>(
                 string procedure,
                 List<ExecuteParameter> objectParameters
                 );
-
-
     }
 }

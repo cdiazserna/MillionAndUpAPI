@@ -46,6 +46,5 @@ namespace MillionAndUp.WebAPI.Controllers
                 throw;
             }
         }
-
     }
 }

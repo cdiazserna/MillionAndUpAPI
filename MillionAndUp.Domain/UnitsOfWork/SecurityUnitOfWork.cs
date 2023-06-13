@@ -19,17 +19,15 @@ namespace MillionAndUp.Domain.UnitsOfWork
             _repo = repo;
             _configuration = configuration;
         }
+
         public async Task<string> GetToken(UserPayload user)
         {
             var users = await _repo.GetUserByLoginAndPassword(user.Login, Encrypt(user.Password));
-            if (!users.Any())
-            {
-                throw new ApplicationException("User not found");
-            }
+            if (!users.Any()) throw new ApplicationException("User not found");
             return BuildToken(users.FirstOrDefault());
         }
 
-        private string BuildToken(User user)
+        public string BuildToken(User user)
         {
             var claims = new[] {
                         new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
@@ -53,7 +51,7 @@ namespace MillionAndUp.Domain.UnitsOfWork
 
         }
 
-        private string Encrypt(string data)
+        public string Encrypt(string data)
         {
             var key = _configuration["Salt"];
             byte[] initializationVector = Encoding.ASCII.GetBytes("abcede0123456789");

@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MillionAndUp.Data\MillionAndUp.Data.csproj" />
     <ProjectReference Include="..\MillionAndUp.Helpers\MillionAndUp.Helpers.csproj" />
   </ItemGroup>

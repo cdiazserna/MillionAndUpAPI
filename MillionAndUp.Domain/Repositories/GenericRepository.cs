@@ -50,7 +50,7 @@ namespace MillionAndUp.Domain.Repositories
         }
 
 
-        public async Task<List<T>> ExcecuteStoreProcedure<T>(
+        public async Task<List<T>> ExecuteStoreProcedure<T>(
                string procedure,
                List<ExecuteParameter> objectParameters
                )
