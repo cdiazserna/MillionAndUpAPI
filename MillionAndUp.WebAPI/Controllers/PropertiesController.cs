@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MillionAndUp.Domain.Interfaces;
 using MillionAndUp.Models;
 
@@ -6,7 +7,7 @@ namespace MillionAndUp.WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-
+    [Authorize]
     public class PropertiesController : GenericController<Property>
     {
         private readonly IPropertiesUnitOfWork _unitOfWork;

@@ -50,5 +50,7 @@ namespace MillionAndUp.Data
         public DbSet<PropertyImage> PropertyImages { get; set; }
 
         public DbSet<PropertyTrace> PropertyTraces { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
