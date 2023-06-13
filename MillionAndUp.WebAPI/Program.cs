@@ -22,6 +22,7 @@ builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWor
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IPropertiesUnitOfWork,PropertiesUnitOfWork>();
 builder.Services.AddScoped<IDBHelper, DBHelper>();
+builder.Services.AddScoped<IPropertyImageUnitOfWork, PropertyImageUnitOfWork>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -94,13 +94,16 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<bool>("Enabled")
                         .HasColumnType("bit");
 
-                    b.Property<string>("File")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("FileData")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime?>("InsertedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("PropertyId")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PropertyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -162,7 +165,9 @@ namespace MillionAndUp.Data.Migrations
                 {
                     b.HasOne("MillionAndUp.Models.Property", "Property")
                         .WithMany("PropertyImages")
-                        .HasForeignKey("PropertyId");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Property");
                 });

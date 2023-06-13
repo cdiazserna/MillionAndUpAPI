@@ -12,8 +12,8 @@ using MillionAndUp.Data;
 namespace MillionAndUp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230610220854_InitialDB")]
-    partial class InitialDB
+    [Migration("20230613123357_create-new-name-filed-propertyimage")]
+    partial class createnewnamefiledpropertyimage
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -96,13 +96,16 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<bool>("Enabled")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("File")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<byte[]>("FileData")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime?>("InsertedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("PropertyId")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PropertyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -130,7 +133,7 @@ namespace MillionAndUp.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("PropertyId")
+                    b.Property<Guid>("PropertyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal?>("Tax")
@@ -164,7 +167,9 @@ namespace MillionAndUp.Data.Migrations
                 {
                     b.HasOne("MillionAndUp.Models.Property", "Property")
                         .WithMany("PropertyImages")
-                        .HasForeignKey("PropertyId");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Property");
                 });
@@ -173,7 +178,9 @@ namespace MillionAndUp.Data.Migrations
                 {
                     b.HasOne("MillionAndUp.Models.Property", "Property")
                         .WithMany("PropertyTraces")
-                        .HasForeignKey("PropertyId");
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Property");
                 });
