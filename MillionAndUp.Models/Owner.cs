@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MillionAndUp.Models
+﻿namespace MillionAndUp.Models
 {
     public class Owner : AuditBase
     {

@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.VisualBasic.FileIO;
-using MillionAndUp.Domain.Interfaces;
+﻿using MillionAndUp.Domain.Interfaces;
 using MillionAndUp.Models;
 
 namespace MillionAndUp.Domain.UnitsOfWork

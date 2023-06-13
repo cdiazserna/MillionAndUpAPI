@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using MillionAndUp.Domain.Interfaces;
-using MillionAndUp.Models;
+﻿using MillionAndUp.Domain.Interfaces;
 
 namespace MillionAndUp.Domain.UnitsOfWork
 {

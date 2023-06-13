@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using MillionAndUp.Data;
 using MillionAndUp.Domain.Interfaces;
-using MillionAndUp.Helpers;
 using MillionAndUp.Helpers.Interfaces;
 using MillionAndUp.Models;
 
@@ -60,6 +59,6 @@ namespace MillionAndUp.Domain.Repositories
             return await _dbhelper.ExcecuteStoreProcedure<T>(procedure, objectParameters, cnn);
         }
 
-        
+
     }
 }

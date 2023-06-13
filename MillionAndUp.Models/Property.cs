@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
-
-namespace MillionAndUp.Models
+﻿namespace MillionAndUp.Models
 {
     public class Property : AuditBase
     {

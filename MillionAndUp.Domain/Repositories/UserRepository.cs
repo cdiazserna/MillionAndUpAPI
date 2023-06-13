@@ -4,7 +4,6 @@ using MillionAndUp.Data;
 using MillionAndUp.Domain.Interfaces;
 using MillionAndUp.Helpers.Interfaces;
 using MillionAndUp.Models;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MillionAndUp.Domain.Repositories
 {
@@ -16,8 +15,8 @@ namespace MillionAndUp.Domain.Repositories
 
         public async Task<List<User>> GetUserByLoginAndPassword(string login, string password)
         {
-          return await _context.Users.Where(x=> x.Password.Equals(password) 
-                            && x.Login.Equals(login)).ToListAsync();
+            return await _context.Users.Where(x => x.Password.Equals(password)
+                              && x.Login.Equals(login)).ToListAsync();
         }
     }
 }

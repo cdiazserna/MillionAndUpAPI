@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace MillionAndUp.Models
+﻿namespace MillionAndUp.Models
 {
     public class PropertyFiltersDTO
     {

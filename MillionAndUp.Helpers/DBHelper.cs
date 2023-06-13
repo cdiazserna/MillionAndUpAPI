@@ -7,7 +7,7 @@ using System.Data.Common;
 
 namespace MillionAndUp.Helpers
 {
-    public class DBHelper: IDBHelper
+    public class DBHelper : IDBHelper
     {
         public async Task<List<T>> ExcecuteStoreProcedure<T>(
                string procedure,
@@ -33,6 +33,6 @@ namespace MillionAndUp.Helpers
             return result;
         }
 
-        
+
     }
 }

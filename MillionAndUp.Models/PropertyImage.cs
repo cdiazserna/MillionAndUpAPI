@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace MillionAndUp.Models
+﻿namespace MillionAndUp.Models
 {
     public class PropertyImage : AuditBase
     {
