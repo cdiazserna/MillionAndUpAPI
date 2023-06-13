@@ -1,4 +1,6 @@
-﻿namespace MillionAndUp.Domain.Interfaces
+﻿using MillionAndUp.Models;
+
+namespace MillionAndUp.Domain.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {
@@ -7,5 +9,11 @@
         Task Add(T entity);
         Task Delete(Guid id);
         void Update(T entity);
+        Task<List<T>> ExcecuteStoreProcedure<T>(
+                string procedure,
+                List<ExecuteParameter> objectParameters
+                );
+
+
     }
 }

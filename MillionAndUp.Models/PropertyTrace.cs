@@ -7,5 +7,6 @@
         public decimal? Value { get; set; }
         public decimal? Tax { get; set; }
         public Property? Property { get; set; }
+        public Guid PropertyId { get; set; }
     }
 }

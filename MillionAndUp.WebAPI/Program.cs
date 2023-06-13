@@ -3,16 +3,25 @@ using MillionAndUp.Data;
 using MillionAndUp.Domain.Interfaces;
 using MillionAndUp.Domain.Repositories;
 using MillionAndUp.Domain.UnitsOfWork;
+using MillionAndUp.Helpers;
+using MillionAndUp.Helpers.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
 // Add services to the container.
+builder.Services.Configure<IISServerOptions>(options =>
+{
+    options.AllowSynchronousIO = true;
+});
 
 builder.Services.AddControllers();
 builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IPropertiesUnitOfWork,PropertiesUnitOfWork>();
+builder.Services.AddScoped<IDBHelper, DBHelper>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,6 +39,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseStaticFiles();
 
 app.MapControllers();
 

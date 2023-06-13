@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MillionAndUp.Data\MillionAndUp.Data.csproj" />
+    <ProjectReference Include="..\MillionAndUp.Helpers\MillionAndUp.Helpers.csproj" />
   </ItemGroup>
 
 </Project>

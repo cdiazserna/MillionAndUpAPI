@@ -1,18 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MillionAndUp.Data;
 using MillionAndUp.Domain.Interfaces;
+using MillionAndUp.Helpers;
+using MillionAndUp.Helpers.Interfaces;
+using MillionAndUp.Models;
 
 namespace MillionAndUp.Domain.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
+        protected readonly IDBHelper _dbhelper;
+        protected readonly IConfiguration _configuration;
         protected readonly ApplicationDbContext _context;
         private DbSet<T> _entitySet;
 
-        public GenericRepository(ApplicationDbContext context)
+        public GenericRepository(ApplicationDbContext context, IDBHelper dBHelper, IConfiguration configuration)
         {
             _context = context;
+            _dbhelper = dBHelper;
             _entitySet = _context.Set<T>();
+            _configuration = configuration;
         }
         public async Task Add(T entity)
         {
@@ -41,5 +49,17 @@ namespace MillionAndUp.Domain.Repositories
             _entitySet.Update(entity);
             _context.SaveChanges();
         }
+
+
+        public async Task<List<T>> ExcecuteStoreProcedure<T>(
+               string procedure,
+               List<ExecuteParameter> objectParameters
+               )
+        {
+            var cnn = _configuration.GetConnectionString("DefaultConnection");
+            return await _dbhelper.ExcecuteStoreProcedure<T>(procedure, objectParameters, cnn);
+        }
+
+        
     }
 }

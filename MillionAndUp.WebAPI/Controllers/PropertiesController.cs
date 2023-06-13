@@ -9,8 +9,16 @@ namespace MillionAndUp.WebAPI.Controllers
 
     public class PropertiesController : GenericController<Property>
     {
-        public PropertiesController(IGenericUnitOfWork<Property> unit) : base(unit)
+        private readonly IPropertiesUnitOfWork _unitOfWork;
+        public PropertiesController(IGenericUnitOfWork<Property> unit, IPropertiesUnitOfWork unitOfWork) : base(unit)
         {
+            _unitOfWork = unitOfWork;
+        }
+        [HttpGet]
+        [Route("getPropertiesByFilter")]
+        public async Task<List<PropertyFiltersDTO>> GetPropertiesByFilter([FromQuery] PropertyFiltersPayload payload)
+        {
+            return await _unitOfWork.GetPropertiesByFilter(payload);
         }
     }
 }
