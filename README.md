@@ -1,5 +1,4 @@
-# SENIOR BACKEND PRACTICAL TEST
-## Company: Million And Up
+# API
 This is the document where I will explain in detail the construction of the API and I will explain topics about: 
 
 1. Tools and Technologies used
