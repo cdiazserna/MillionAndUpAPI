@@ -18,7 +18,7 @@ This API is in charge of performing all the transactions related to the Real Est
 Transversal to this main implementation of the API, security was also applied to the application, in order to maintain and persist the integrity of our data.
 Next, I will detail each of the sections mentioned at the beginning of this document for clarity:
 
-1. ### **Tools and Technologies used**
+**1.** ### **Tools and Technologies used**
 
 | Tools               |
 | ------------------- |
