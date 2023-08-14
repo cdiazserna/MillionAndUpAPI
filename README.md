@@ -1,7 +1,7 @@
 # API
 This is the document where I will explain in detail the construction of the API and I will explain topics about: 
 
-1.  [Tools and Technologies used](#1-.-tools-and-Technologies-used)
+1.  [Tools and Technologies used](#tools-and-Technologies-used)
 2. Repository and environment configuration to execute the API.
 3.	Entity Relationship Diagram
 4.	Software Architecture
@@ -18,7 +18,7 @@ This API is in charge of performing all the transactions related to the Real Est
 Transversal to this main implementation of the API, security was also applied to the application, in order to maintain and persist the integrity of our data.
 Next, I will detail each of the sections mentioned at the beginning of this document for clarity:
 
-### **1. Tools and Technologies used**
+1. ### **Tools and Technologies used**
 
 | Tools               |
 | ------------------- |
