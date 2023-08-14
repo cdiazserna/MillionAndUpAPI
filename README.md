@@ -1,7 +1,7 @@
 # API
 This is the document where I will explain in detail the construction of the API and I will explain topics about: 
 
-1.  [Tools and Technologies used](#tools-and-Technologies-used)
+1.  [Tools and Technologies used](#1-.-tools-and-Technologies-used)
 2. Repository and environment configuration to execute the API.
 3.	Entity Relationship Diagram
 4.	Software Architecture
